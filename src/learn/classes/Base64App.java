@@ -1,4 +1,18 @@
 package learn.classes;
 
-public class base64App {
+import java.util.Base64;
+
+public class Base64App {
+    public static void main(String[] args) {
+        String original = "Dandi Irwanto";
+
+        // encode to base64
+        String encoded = Base64.getEncoder().encodeToString(original.getBytes());
+        System.out.println(encoded);
+
+        // return data asli atau decode
+        byte[] bytes = Base64.getDecoder().decode(encoded);
+        String result = new String(bytes);
+        System.out.println(result);
+    }
 }
